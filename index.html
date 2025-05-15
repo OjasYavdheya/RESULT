@@ -82,6 +82,12 @@
     input[type="text"]:focus {
       border-color: #007b83;
     }
+    .error {
+      color: red;
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+
 
     button {
       padding: 10px 20px;
@@ -90,13 +96,13 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      background-color: #005f66;
+      background-color: #0398a2;
       color: white;
       transition: background 0.2s ease;
     }
 
     button:hover {
-      background-color: #005f66;
+      background-color: #df5e1d;
     }
 
     button[type="reset"] {
@@ -117,12 +123,7 @@
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     }
 
-    .error {
-      color: red;
-      margin-top: 10px;
-      font-size: 0.95rem;
-    }
-
+    
     .footer {
       background-color: #e1f3f3;
       color: #333;
@@ -167,18 +168,25 @@
     <input type="text" id="studentName" placeholder="Enter Name" autocomplete="off">
     <br />
     <button onclick="showResult()">Submit</button>
-
+    <button type="reset" onclick="resetForm()">Reset</button>
+    
+      <p id="errorMessage" class="error"></p>
+<iframe id="resultFrame" title="Class Result PDF"></iframe>
     <div style="text-align: center; margin-top: 10px;">
     <h3 style="color: #007e87;">🎮 Try My First Game!</h3>
     <p style="margin: 10px 0;">I recently launched my first game on itch.io. Check it out and let me know what you think!</p>
     <a href="https://1fng.itch.io/birdington" target="_blank" 
-     style="background-color: #007e87; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">
+    style="background-color: #56f77f; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;"
+    
+    onmouseover="this.style.backgroundColor='#f91212';" 
+    onmouseout="this.style.backgroundColor='#56f77f';">
+
       Play Now on itch.io
     </a>
     </div>
     
-    <p id="errorMessage" class="error"></p>
-    <iframe id="resultFrame" title="Class Result PDF"></iframe>
+  
+    
     <p style="margin-top: 30px;">Brought to you by <strong>Nikhil Yadav & Harsh </strong></p>
   </div>
 
