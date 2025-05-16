@@ -1,60 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--head content-->
-
 <head>
-  <!-- Night mode styles -->
-  <style>
-  body.night-mode {
-    background-color: #070505cb;
-    color: #f5f5f5;
-  }
-
-  body.night-mode .header {
-    background-color: #2e2d2d;
-    color: #f5f5f5;
-  }
-
-  body.night-mode .content {
-    background-color: #2b2626;
-    color: #fdfdfd;
-  }
-
-  body.night-mode .footer {
-    background-color: #2e2d2d;
-    color: #f5f5f5;
-  }
-
-  body.night-mode button {
-    background-color: #fa1b1b;
-    color: #f5f5f5;
-  }
-
-  body.night-mode button:hover {
-    background-color: #afacac;
-  }
-</style>
-<!-- Night mode styles -->
-  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CBSE Results 2025</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!--style-->
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
       font-family: 'Inter', sans-serif;
       background-color: #f5f7fa;
-      color: #000000;
+      color: #000;
     }
-
     .header {
       background-color: #18b2bd;
       color: white;
@@ -63,260 +19,191 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    
-
-    .header img {
-      height: 60px;
-      margin-right: 15px;
-    }
-
-    .header .title {
-      display: flex;
-      align-items: center;
-      flex: 1;
-      min-width: 300px;
-    }
-
-    .header h1 {
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
-
-    .header h3 {
-      font-weight: 400;
-      font-size: 0.9rem;
-    }
-
+    .header img { height: 60px; margin-right: 15px; }
+    .header .title { display: flex; align-items: center; flex: 1; min-width: 300px; }
+    .header h1 { font-size: 1.5rem; font-weight: 600; }
     .content {
       max-width: 700px;
       margin: 60px auto 100px auto;
-      background-color: white;
+      background: #fff;
       padding: 30px;
       border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.05);
       text-align: center;
     }
-
-    .content h2 {
-      color: #09aeba;
-      margin-bottom: 20px;
-      font-size: 1.4rem;
-    }
-
+    .content h2 { color: #09aeba; margin-bottom: 20px; font-size: 1.4rem; }
     input[type="text"] {
-      padding: 10px;
-      width: 70%;
-      max-width: 400px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      margin-top: 10px;
-      font-size: 1rem;
-      outline: none;
-      transition: border 0.2s ease;
+      padding: 10px; width: 70%; max-width: 400px; border: 1px solid #ccc;
+      border-radius: 8px; margin-top: 10px; font-size: 1rem; outline: none; transition: border 0.2s;
     }
-
-    input[type="text"]:focus {
-      border-color: #007b83;
-    }
-    .error {
-      color: red;
-      margin-top: 10px;
-      font-size: 0.95rem;
-    }
-
-
+    input[type="text"]:focus { border-color: #007b83; }
+    .error { color: red; margin-top: 10px; font-size: 0.95rem; }
     button {
-      padding: 10px 20px;
-      margin: 15px 8px 20px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      background-color: #0398a2;
-      color: white;
-      transition: background 0.2s ease;
+      padding: 10px 20px; margin: 15px 8px 20px; font-size: 1rem; border: none;
+      border-radius: 8px; cursor: pointer; background: #0398a2; color: white; transition: background 0.2s;
     }
-
-    button:hover {
-      background-color: #e40000;
-    }
-
-    button[type="reset"] {
-      background-color: #aaa;
-    }
-
-    button[type="reset"]:hover {
-      background-color: #888;
-    }
-
+    button:hover { background: #e40000; }
+    button[type="reset"] { background: #aaa; }
+    button[type="reset"]:hover { background: #888; }
     iframe {
-      width: 100%;
-      height: 500px;
-      border: none;
-      border-radius: 10px;
-      margin-top: 20px;
-      display: none;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.823);
+      width: 100%; height: 500px; border: none; border-radius: 10px; margin-top: 20px;
+      display: none; box-shadow: 0 6px 20px rgba(0,0,0,0.82);
     }
-
-    
     .footer {
-      background-color: #e1f3f3;
-      color: #333;
-      padding: 12px;
-      text-align: center;
-      font-size: 0.9rem;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+      background: #e1f3f3; color: #333; padding: 12px; text-align: center; font-size: 0.9rem;
+      position: fixed; bottom: 0; width: 100%; box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
     }
-
     @media (max-width: 600px) {
-      .header {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .header .title {
-        justify-content: center;
-        margin-bottom: 10px;
-      }
-
-      input[type="text"] {
-        width: 90%;
-      }
+      .header { flex-direction: column; text-align: center; }
+      .header .title { justify-content: center; margin-bottom: 10px; }
+      input[type="text"] { width: 90%; }
     }
+    body.night-mode { background: #070505cb; color: #f5f5f5; }
+    body.night-mode .header { background: #2e2d2d; color: #f5f5f5; }
+    body.night-mode .content { background: #2b2626; color: #fdfdfd; }
+    body.night-mode .footer { background: #2e2d2d; color: #f5f5f5; }
+    body.night-mode button { background: #fa1b1b; color: #f5f5f5; }
+    body.night-mode button:hover { background: #afacac; }
   </style>
 </head>
-<!--style-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7xj1z5l5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7xj1z5l5e5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous">
-
-
-
-<!--head content-->
-
-
-<!--body content-->
-
 <body>
   <div class="header">
-  <div class="title">
-    <img src="logo.png" alt="CBSE Logo">
-    <h1>Tharki Board of Senior Secondary Education</h1>
+    <div class="title">
+      <img src="logo.png" alt="CBSE Logo">
+      <h1>Tharki Board of Senior Secondary Education</h1>
+    </div>
+    <button id="themeToggle" style="padding:10px; border:none; border-radius:5px; cursor:pointer; background:#3b3d3c; color:white;"> Night Mode</button>
   </div>
-  <h3><b>Click to switch </b></h3>
-  <button id="themeToggle" style="padding: 10px; border: none; border-radius: 5px; cursor: pointer; background-color: #3b3d3c; color: white;"> Night Mode</button>
-</div>
 
   <div class="content">
     <h2>Senior School Certificate Examination (Class XII PCM) Results 2025</h2>
     <p><b>Enter your Friend's name to check his result</b></p>
     <input type="text" id="studentName" placeholder="Enter Name" autocomplete="on" oninput="showSuggestions(this.value)">
-<div id="suggestions" style="position: relative; max-width: 400px; margin: 0 auto; text-align: left;"></div>
+    <div id="suggestions" style="position:relative; max-width:400px; margin:0 auto; text-align:left;"></div>
     <br />
     <button onclick="showResult();">Submit</button>
     <button type="reset" onclick="resetForm();">Reset</button>
-
     <p id="errorMessage" class="error"></p>
-
-    <!--script to show result-->
-
-
-    <script>
-      document.getElementById("studentName").addEventListener("keypress", function(event) {
-      if (event.key === "Enter") {
-        event.preventDefault();
-        showResult();
-      }
-      });
-    </script>
-    <!--script to show result-->
-    
     <iframe id="resultFrame" title="Class Result PDF"></iframe>
-    <div style="text-align: center; margin-top: 10px;">
-    <h3 style="color: #09aeba;"><b>🎮 Try My First Game!</b></h3>
-    <p style="margin: 10px 0;">I recently launched my first game on itch.io. Check it out and let me know what you think!</p>
-    <a href="https://1fng.itch.io/birdington" target="_blank" 
-    style="background-color: #56f77f; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;"
-    
-    onmouseover="this.style.backgroundColor='#f91212';" 
-    onmouseout="this.style.backgroundColor='#56f77f';">
-
-      Play Now on itch.io
-    </a>
+    <div style="text-align:center; margin-top:10px;">
+      <h3 style="color:#09aeba;"><b>🎮 Try My First Game!</b></h3>
+      <p style="margin:10px 0;">I recently launched my first game on itch.io. Check it out and let me know what you think!</p>
+      <a href="https://1fng.itch.io/birdington" target="_blank"
+        style="background:#56f77f; color:white; padding:10px 20px; border-radius:5px; text-decoration:none;"
+        onmouseover="this.style.backgroundColor='#f91212';"
+        onmouseout="this.style.backgroundColor='#56f77f';">
+        Play Now on itch.io
+      </a>
     </div>
-    
-    
-  
-    
-    <p style="margin-top: 30px;">Brought to you by <strong>Nikhil Yadav & Harsh </strong></p>
+    <p style="margin-top:30px;">Brought to you by <strong>Nikhil Yadav & Harsh</strong></p>
   </div>
 
   <div class="footer">
     Designed, Developed and Hosted by Byte Bandits
   </div>
 
-  <!--sugestion box-->
+  <!-- Name Popup for Comments -->
+  <div id="name-popup-overlay" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.35); z-index:9999; align-items:center; justify-content:center;">
+    <div id="name-popup" style="background:#fff; color:#222; padding:32px 24px 24px 24px; border-radius:14px; box-shadow:0 8px 32px rgba(0,0,0,0.18); max-width:90vw; width:340px; text-align:center; position:relative;">
+      <h2 style="margin-bottom:18px; color:#09aeba;">Welcome!</h2>
+      <p style="margin-bottom:14px;">Please enter your name to comment:</p>
+      <input id="popup-username" type="text" style="width:90%; padding:10px; border-radius:7px; border:1px solid #ccc; font-size:1rem; margin-bottom:16px;" placeholder="Your name" maxlength="30" autofocus>
+      <br>
+      <button id="popup-save-btn" style="padding:8px 22px; border:none; border-radius:7px; background:#0398a2; color:#fff; font-size:1rem; cursor:pointer;">Continue</button>
+    </div>
+  </div>
+
+  <!-- Comment Section -->
+  <div id="comments-section" style="margin-top:40px; text-align:left; max-width:600px; margin-left:auto; margin-right:auto;">
+    <h3 style="color:#09aeba;">Comments</h3>
+    <div style="display:flex;align-items:flex-start;gap:10px;">
+      <div id="my-avatar" style="width:40px;height:40px;border-radius:50%;background:#0398a2;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:600;user-select:none;"></div>
+      <div style="flex:1;">
+        <textarea id="comment-input" rows="2" style="width:100%; border-radius:18px; padding:12px 16px; border:1px solid #ccc; font-size:1rem; resize:none;" placeholder="Add a public comment..."></textarea>
+        <div style="text-align:right;margin-top:6px;">
+          <button id="add-comment" style="background:#0398a2;color:white;padding:7px 18px;border-radius:18px;font-size:1rem;">Comment</button>
+        </div>
+      </div>
+    </div>
+    <div id="comments-list" style="margin-top:30px;"></div>
+  </div>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
   <script>
-  const names = ["Nikhil", "Abhay", "Nishant", "Nitin", "Harsh Kumar",  "Anurag", "Gaurav", "Akash Poddar", "Sameer", "Ankit Kumar", "Prashant", "Aaditya", "Gorakhnath", "Ayush Kumar Maharaj", "Akash 2", "Pawan", "Somnath", "Aakash", "Ankit", "Aniket", "Hemant", "Prithviraj", "Prince sharma", "Punyam", "Himanshu", "Prince Samariya", "Jaid", "Gulshan", "Dayanand",   "Inzamam", "SehajPreet", "Rihan", "Santosh", "Raghav", "Harsh Verma", "Deep", "Ayush Kushwaha", "YashRaj", "Jai kishan", "Vikas", "Lucky", "Yash Shrivastav", "Varun", "Anand", "Anusabu","Keshav Choudhary", "Aakash Saini", "Ritik", "Ayush Mishra", "Harshit", "Jatin", "Sajal", "Rishabh", "Ranjan", "Anish", "Shivam", "Sumit"]; // Add more names as needed
+    // Yahan apna config paste karo
+    const firebaseConfig = {
+      apiKey: "AIzaSyAN3cptOOlcnoJBRDmkWNb3qbd1IF-CDxk",
+      authDomain: "result-28cd6.firebaseapp.com",
+      projectId: "result-28cd6",
+      storageBucket: "result-28cd6.firebasestorage.app",
+      messagingSenderId: "683249488519",
+      appId: "1:683249488519:web:b7b2c12b5398a638c09e22"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script>
+  <script>
+    // Night mode toggle
+    document.addEventListener("DOMContentLoaded", () => {
+      const themeToggle = document.getElementById("themeToggle");
+      const body = document.body;
+      themeToggle.addEventListener("click", () => {
+        if (body.classList.contains("night-mode")) {
+          body.classList.remove("night-mode");
+          themeToggle.textContent = " Night Mode";
+          themeToggle.style.backgroundColor = "#3b3d3c";
+        } else {
+          body.classList.add("night-mode");
+          themeToggle.textContent = " Day Mode";
+          themeToggle.style.backgroundColor = "#fa1b1b";
+        }
+      });
+    });
 
-  function showSuggestions(input) {
-    const suggestionsDiv = document.getElementById("suggestions");
-    suggestionsDiv.innerHTML = ""; // Clear previous suggestions
-
-    if (input.trim() === "") {
-      return; // If input is empty, do nothing
+    // Suggestion box
+    const names = ["Nikhil", "Abhay", "Nishant", "Nitin", "Harsh Kumar", "Anurag", "Gaurav", "Akash Poddar", "Sameer", "Ankit Kumar", "Prashant", "Aaditya", "Gorakhnath", "Ayush Kumar Maharaj", "Akash 2", "Pawan", "Somnath", "Aakash", "Ankit", "Aniket", "Hemant", "Prithviraj", "Prince sharma", "Punyam", "Himanshu", "Prince Samariya", "Jaid", "Gulshan", "Dayanand", "Inzamam", "SehajPreet", "Rihan", "Santosh", "Raghav", "Harsh Verma", "Deep", "Ayush Kushwaha", "YashRaj", "Jai kishan", "Vikas", "Lucky", "Yash Shrivastav", "Varun", "Anand", "Anusabu","Keshav Choudhary", "Aakash Saini", "Ritik", "Ayush Mishra", "Harshit", "Jatin", "Sajal", "Rishabh", "Ranjan", "Anish", "Shivam", "Sumit"];
+    function showSuggestions(input) {
+      const suggestionsDiv = document.getElementById("suggestions");
+      suggestionsDiv.innerHTML = "";
+      if (input.trim() === "") return;
+      const filteredNames = names.filter(name => name.toLowerCase().startsWith(input.toLowerCase()));
+      filteredNames.forEach(name => {
+        const suggestionItem = document.createElement("div");
+        suggestionItem.textContent = name;
+        suggestionItem.style.padding = "5px";
+        suggestionItem.style.cursor = "pointer";
+        suggestionItem.style.backgroundColor = "#75969B";
+        suggestionItem.style.borderRadius = "5px";
+        suggestionItem.style.margin = "2px 0";
+        suggestionItem.style.transition = "background 0.2s";
+        suggestionItem.addEventListener("mouseover", () => {
+          suggestionItem.style.backgroundColor = "#5a7b8c";
+        });
+        suggestionItem.style.borderBottom = "1px solid #ddd";
+        suggestionItem.addEventListener("click", () => {
+          document.getElementById("studentName").value = name;
+          suggestionsDiv.innerHTML = "";
+        });
+        suggestionsDiv.appendChild(suggestionItem);
+      });
     }
 
-    const filteredNames = names.filter(name => name.toLowerCase().startsWith(input.toLowerCase()));
-
-    filteredNames.forEach(name => {
-      const suggestionItem = document.createElement("div");
-      suggestionItem.textContent = name;
-      suggestionItem.style.padding = "5px";
-      suggestionItem.style.cursor = "pointer";
-      suggestionItem.style.backgroundColor = "#75969B";
-      suggestionItem.style.borderRadius = "5px";
-      suggestionItem.style.margin = "2px 0";
-      suggestionItem.style.transition = "background 0.2s ease";
-      suggestionItem.addEventListener("mouseover", () => {
-        suggestionItem.style.backgroundColor = "#5a7b8c"; // Change color on hover
-      });
-      suggestionItem.style.borderBottom = "1px solid #ddd";
-
-      suggestionItem.addEventListener("click", () => {
-        document.getElementById("studentName").value = name; // Set the clicked name in the input field
-        suggestionsDiv.innerHTML = ""; // Clear suggestions
-      });
-
-      suggestionsDiv.appendChild(suggestionItem);
-    });
-  }
-</script>
-<!--suggestion box-->
-
-<!--script to show result-->
-  <script>
+    // Result show/reset
     function showResult() {
       const name = document.getElementById("studentName").value.trim().toLowerCase();
       const errorMessage = document.getElementById("errorMessage");
       const resultFrame = document.getElementById("resultFrame");
-
       errorMessage.textContent = "";
       resultFrame.style.display = "none";
-
       if (name === "") {
         errorMessage.textContent = "Please enter your name.";
         return;
       }
-
       const filePath = name + ".pdf";
-
       fetch(filePath, { method: "HEAD" })
         .then(response => {
           if (response.ok) {
@@ -330,348 +217,262 @@
           errorMessage.textContent = "Error fetching the result. Try again later.";
         });
     }
-
     function resetForm() {
       document.getElementById("studentName").value = "";
       document.getElementById("errorMessage").textContent = "";
       document.getElementById("resultFrame").style.display = "none";
     }
-  </script>
-  <!--script to show result-->
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const themeToggle = document.getElementById("themeToggle");
-    const body = document.body;
 
-    themeToggle.addEventListener("click", () => {
-      if (body.classList.contains("night-mode")) {
-        body.classList.remove("night-mode");
-        themeToggle.textContent = " Night Mode";
-        themeToggle.style.backgroundColor = "#3b3d3c";
-      } else {
-        body.classList.add("night-mode");
-        themeToggle.textContent = " Day Mode";
-        themeToggle.style.backgroundColor = "#fa1b1b";
+    // --- Comment System (Firebase) ---
+    // Unique user id for this browser
+    function getUserId() {
+      let uid = localStorage.getItem('user_id');
+      if (!uid) {
+        uid = 'u' + Math.random().toString(36).slice(2) + Date.now();
+        localStorage.setItem('user_id', uid);
       }
-    });
-  });
-</script>
-
-<!-- YouTube-style Comment Box (Customizable Icons) -->
-<div id="name-popup-overlay" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.35); z-index:9999; align-items:center; justify-content:center;">
-  <div id="name-popup" style="background:#fff; color:#222; padding:32px 24px 24px 24px; border-radius:14px; box-shadow:0 8px 32px rgba(0,0,0,0.18); max-width:90vw; width:340px; text-align:center; position:relative;">
-    <h2 style="margin-bottom:18px; color:#09aeba;">Welcome!</h2>
-    <p style="margin-bottom:14px;">Please enter your name to comment:</p>
-    <input id="popup-username" type="text" style="width:90%; padding:10px; border-radius:7px; border:1px solid #ccc; font-size:1rem; margin-bottom:16px;" placeholder="Your name" maxlength="30" autofocus>
-    <br>
-    <button id="popup-save-btn" style="padding:8px 22px; border:none; border-radius:7px; background:#0398a2; color:#fff; font-size:1rem; cursor:pointer;">Continue</button>
-  </div>
-</div>
-
-<div id="comments-section" style="margin-top:40px; text-align:left; max-width:600px; margin-left:auto; margin-right:auto;">
-  <h3 style="color:#09aeba;">Comments</h3>
-  <div style="display:flex;align-items:flex-start;gap:10px;">
-    <div id="my-avatar" style="width:40px;height:40px;border-radius:50%;background:#0398a2;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:600;user-select:none;"></div>
-    <div style="flex:1;">
-      <textarea id="comment-input" rows="2" style="width:100%; border-radius:18px; padding:12px 16px; border:1px solid #ccc; font-size:1rem; resize:none;" placeholder="Add a public comment..."></textarea>
-      <div style="text-align:right;margin-top:6px;">
-        <button id="add-comment" style="background:#0398a2;color:white;padding:7px 18px;border-radius:18px;font-size:1rem;">Comment</button>
-      </div>
-    </div>
-  </div>
-  <div id="comments-list" style="margin-top:30px;"></div>
-</div>
-
-<style>
-/* Example: You can replace these with your own SVG, PNG, or font icons */
-.like-icon {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
-  background: url('like.svg') center/contain no-repeat;
-  /* Replace 'like.svg' with your own icon or use background-color etc. */
-}
-.delete-icon {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
-  background: url('trash.svg') center/contain no-repeat;
-  /* Replace 'trash.svg' with your own icon or use background-color etc. */
-}
-</style>
-
-<script>
-// Unique user id for this browser
-function getUserId() {
-  let uid = localStorage.getItem('user_id');
-  if (!uid) {
-    uid = 'u' + Math.random().toString(36).slice(2) + Date.now();
-    localStorage.setItem('user_id', uid);
-  }
-  return uid;
-}
-
-// Show popup if username not set
-function showNamePopup() {
-  document.getElementById('name-popup-overlay').style.display = 'flex';
-  document.getElementById('popup-username').focus();
-  updatePopupTheme();
-}
-
-// Save username and close popup
-function saveUsername() {
-  const input = document.getElementById('popup-username');
-  let username = input.value.trim();
-  if (username.length < 2) {
-    input.style.borderColor = 'red';
-    input.focus();
-    return;
-  }
-  localStorage.setItem('username', username);
-  document.getElementById('name-popup-overlay').style.display = 'none';
-  updateMyAvatar();
-  loadComments();
-}
-
-// Update avatar circle with first letter of name
-function updateMyAvatar() {
-  const username = localStorage.getItem('username') || '';
-  const avatar = document.getElementById('my-avatar');
-  if (username) {
-    avatar.textContent = username[0].toUpperCase();
-    avatar.style.background = stringToColor(username);
-  } else {
-    avatar.textContent = '';
-    avatar.style.background = '#0398a2';
-  }
-}
-
-// Generate a color from a string (for avatar bg)
-function stringToColor(str) {
-  let hash = 0;
-  for (let i = 0; i < str.length; i++) {
-    hash = str.charCodeAt(i) + ((hash << 5) - hash);
-  }
-  let color = '#';
-  for (let i = 0; i < 3; i++) {
-    let value = (hash >> (i * 8)) & 0xFF;
-    color += ('00' + value.toString(16)).substr(-2);
-  }
-  return color;
-}
-
-// Format time ago
-function timeAgo(ts) {
-  const now = Date.now();
-  const diff = Math.floor((now - ts) / 1000);
-  if (diff < 5) return "just now";
-  if (diff < 60) return diff + " sec ago";
-  if (diff < 3600) return Math.floor(diff/60) + " min ago";
-  if (diff < 86400) return Math.floor(diff/3600) + " hr ago";
-  return new Date(ts).toLocaleDateString();
-}
-
-// Update popup and comments style based on theme
-function updatePopupTheme() {
-  const popup = document.getElementById('name-popup');
-  const overlay = document.getElementById('name-popup-overlay');
-  const isNight = document.body.classList.contains('night-mode');
-  if (isNight) {
-    popup.style.background = '#232323';
-    popup.style.color = '#f5f5f5';
-    overlay.style.background = 'rgba(0,0,0,0.65)';
-    document.getElementById('popup-save-btn').style.background = '#fa1b1b';
-  } else {
-    popup.style.background = '#fff';
-    popup.style.color = '#222';
-    overlay.style.background = 'rgba(0,0,0,0.35)';
-    document.getElementById('popup-save-btn').style.background = '#0398a2';
-  }
-  updateCommentsTheme();
-}
-
-// Listen for theme changes
-document.getElementById('themeToggle').addEventListener('click', updatePopupTheme);
-
-// Popup button events
-document.getElementById('popup-save-btn').onclick = saveUsername;
-document.getElementById('popup-username').addEventListener('keypress', function(e){
-  if(e.key === 'Enter') saveUsername();
-});
-
-// Load comments from localStorage
-function loadComments() {
-  const comments = JSON.parse(localStorage.getItem('comments') || '[]');
-  const list = document.getElementById('comments-list');
-  list.innerHTML = '';
-  const myUserId = getUserId();
-  comments.slice().reverse().forEach((c, idx) => {
-    const row = document.createElement('div');
-    row.className = "yt-comment-row";
-    row.style.display = "flex";
-    row.style.alignItems = "flex-start";
-    row.style.gap = "12px";
-    row.style.marginBottom = "22px";
-
-    // Avatar
-    const avatar = document.createElement('div');
-    avatar.textContent = c.name[0].toUpperCase();
-    avatar.style.width = avatar.style.height = "38px";
-    avatar.style.borderRadius = "50%";
-    avatar.style.background = stringToColor(c.name);
-    avatar.style.color = "#fff";
-    avatar.style.display = "flex";
-    avatar.style.alignItems = "center";
-    avatar.style.justifyContent = "center";
-    avatar.style.fontWeight = "600";
-    avatar.style.fontSize = "1.1rem";
-    avatar.style.userSelect = "none";
-    row.appendChild(avatar);
-
-    // Main content
-    const main = document.createElement('div');
-    main.style.flex = "1";
-    main.style.minWidth = "0";
-
-    // Name and time
-    const nameRow = document.createElement('div');
-    nameRow.style.display = "flex";
-    nameRow.style.alignItems = "center";
-    nameRow.style.gap = "10px";
-    nameRow.innerHTML = `<span style="font-weight:600;">${c.name}</span><span style="color:#888;font-size:0.95em;">${timeAgo(c.ts||Date.now())}</span>`;
-    main.appendChild(nameRow);
-
-    // Comment text
-    const textDiv = document.createElement('div');
-    textDiv.textContent = c.text;
-    textDiv.style.margin = "4px 0 6px 0";
-    textDiv.style.whiteSpace = "pre-wrap";
-    main.appendChild(textDiv);
-
-    // Actions row
-    const actions = document.createElement('div');
-    actions.style.display = "flex";
-    actions.style.alignItems = "center";
-    actions.style.gap = "8px";
-
-    // Like button
-    const likeBtn = document.createElement('button');
-    const liked = c.likedBy && c.likedBy.includes(myUserId);
-    likeBtn.innerHTML = `👍 <span>${c.likes||0}</span>`;
-    likeBtn.style.background = "none";
-    likeBtn.style.border = "none";
-    likeBtn.style.cursor = "pointer";
-    likeBtn.style.color = liked ? "#2196f3" : "inherit";
-    likeBtn.style.fontWeight = "600";
-    likeBtn.style.fontSize = "1.05em";
-    likeBtn.title = "Like";
-    likeBtn.onclick = function() {
-      if (!c.likedBy) c.likedBy = [];
-      if (!c.likedBy.includes(myUserId)) {
-        c.likes = (c.likes||0) + 1;
-        c.likedBy.push(myUserId);
-        saveAllComments(comments);
-      } else {
-        // Unlike
-        c.likes = Math.max(0, (c.likes||1) - 1);
-        c.likedBy = c.likedBy.filter(uid => uid !== myUserId);
-        saveAllComments(comments);
-      }
-    };
-    actions.appendChild(likeBtn);
-
-    // Delete button (only for own comment)
-    if (c.userId === myUserId) {
-      const deleteBtn = document.createElement('button');
-      deleteBtn.innerHTML = '🗑️';
-      
-      deleteBtn.title = "Delete";
-      deleteBtn.style.background = "none";
-      deleteBtn.style.border = "none";
-      deleteBtn.style.cursor = "pointer";
-      deleteBtn.style.color = "#e53935";
-      deleteBtn.style.fontSize = "1.1em";
-      deleteBtn.onclick = function() {
-        if (confirm("Delete this comment?")) {
-          comments.splice(comments.length-1-idx, 1); // reverse order
-          saveAllComments(comments);
-        }
-      };
-      actions.appendChild(deleteBtn);
+      return uid;
     }
 
-    main.appendChild(actions);
-    row.appendChild(main);
+    // Show popup if username not set
+    function showNamePopup() {
+      document.getElementById('name-popup-overlay').style.display = 'flex';
+      document.getElementById('popup-username').focus();
+      updatePopupTheme();
+    }
 
-    // Theme
-    const isNight = document.body.classList.contains('night-mode');
-    row.style.background = isNight ? "#232323" : "#f5f7fa";
-    row.style.color = isNight ? "#f5f5f5" : "#222";
-    row.style.borderRadius = "12px";
-    row.style.padding = "10px 16px";
-    row.style.border = isNight ? "1px solid #444" : "1px solid #e0e0e0";
+    // Save username and close popup
+    function saveUsername() {
+      const input = document.getElementById('popup-username');
+      let username = input.value.trim();
+      if (username.length < 2) {
+        input.style.borderColor = 'red';
+        input.focus();
+        return;
+      }
+      localStorage.setItem('username', username);
+      document.getElementById('name-popup-overlay').style.display = 'none';
+      updateMyAvatar();
+      loadComments();
+    }
 
-    list.appendChild(row);
-  });
-}
+    // Update avatar circle with first letter of name
+    function updateMyAvatar() {
+      const username = localStorage.getItem('username') || '';
+      const avatar = document.getElementById('my-avatar');
+      if (username) {
+        avatar.textContent = username[0].toUpperCase();
+        avatar.style.background = stringToColor(username);
+      } else {
+        avatar.textContent = '';
+        avatar.style.background = '#0398a2';
+      }
+    }
 
-// Save all comments and reload
-function saveAllComments(comments) {
-  localStorage.setItem('comments', JSON.stringify(comments));
-  loadComments();
-}
+    // Generate a color from a string (for avatar bg)
+    function stringToColor(str) {
+      let hash = 0;
+      for (let i = 0; i < str.length; i++) {
+        hash = str.charCodeAt(i) + ((hash << 5) - hash);
+      }
+      let color = '#';
+      for (let i = 0; i < 3; i++) {
+        let value = (hash >> (i * 8)) & 0xFF;
+        color += ('00' + value.toString(16)).substr(-2);
+      }
+      return color;
+    }
 
-// Add new comment
-function postComment() {
-  let username = localStorage.getItem('username');
-  if (!username) {
-    showNamePopup();
-    return;
-  }
-  const input = document.getElementById('comment-input');
-  const text = input.value.trim();
-  if (text) {
-    const comments = JSON.parse(localStorage.getItem('comments') || '[]');
-    comments.push({ 
-      name: username, 
-      text, 
-      userId: getUserId(), 
-      likes: 0, 
-      likedBy: [],
-      ts: Date.now()
+    // Format time ago
+    function timeAgo(ts) {
+      const now = Date.now();
+      const diff = Math.floor((now - ts) / 1000);
+      if (diff < 5) return "just now";
+      if (diff < 60) return diff + " sec ago";
+      if (diff < 3600) return Math.floor(diff/60) + " min ago";
+      if (diff < 86400) return Math.floor(diff/3600) + " hr ago";
+      return new Date(ts).toLocaleDateString();
+    }
+
+    // Update popup and comments style based on theme
+    function updatePopupTheme() {
+      const popup = document.getElementById('name-popup');
+      const overlay = document.getElementById('name-popup-overlay');
+      const isNight = document.body.classList.contains('night-mode');
+      if (isNight) {
+        popup.style.background = '#232323';
+        popup.style.color = '#f5f5f5';
+        overlay.style.background = 'rgba(0,0,0,0.65)';
+        document.getElementById('popup-save-btn').style.background = '#fa1b1b';
+      } else {
+        popup.style.background = '#fff';
+        popup.style.color = '#222';
+        overlay.style.background = 'rgba(0,0,0,0.35)';
+        document.getElementById('popup-save-btn').style.background = '#0398a2';
+      }
+    }
+
+    // Listen for theme changes
+    document.getElementById('themeToggle').addEventListener('click', updatePopupTheme);
+
+    // Popup button events
+    document.getElementById('popup-save-btn').onclick = saveUsername;
+    document.getElementById('popup-username').addEventListener('keypress', function(e){
+      if(e.key === 'Enter') saveUsername();
     });
-    localStorage.setItem('comments', JSON.stringify(comments));
-    input.value = '';
-    loadComments();
-  }
-}
 
-document.getElementById('add-comment').onclick = postComment;
+    // Load comments from Firestore (real-time)
+    function loadComments() {
+      const list = document.getElementById('comments-list');
+      db.collection("comments").orderBy("ts", "desc").onSnapshot(snapshot => {
+        list.innerHTML = '';
+        const myUserId = getUserId();
+        snapshot.forEach(doc => {
+          const c = doc.data();
 
-// Post comment on Enter (without Shift)
-document.getElementById('comment-input').addEventListener('keydown', function(e) {
-  if (e.key === 'Enter' && !e.shiftKey) {
-    e.preventDefault();
-    postComment();
-  }
-});
+          // Row
+          const row = document.createElement('div');
+          row.style.display = "flex";
+          row.style.alignItems = "flex-start";
+          row.style.gap = "12px";
+          row.style.marginBottom = "22px";
+          row.style.background = document.body.classList.contains('night-mode') ? "#232323" : "#f5f7fa";
+          row.style.color = document.body.classList.contains('night-mode') ? "#f5f5f5" : "#222";
+          row.style.borderRadius = "12px";
+          row.style.padding = "10px 16px";
+          row.style.border = document.body.classList.contains('night-mode') ? "1px solid #444" : "1px solid #e0e0e0";
 
-// On page load, show popup if needed and load comments
-document.addEventListener('DOMContentLoaded', function() {
-  if (!localStorage.getItem('username')) showNamePopup();
-  updateMyAvatar();
-  loadComments();
-});
-</script>
+          // Avatar
+          const avatar = document.createElement('div');
+          avatar.textContent = c.name[0].toUpperCase();
+          avatar.style.width = avatar.style.height = "38px";
+          avatar.style.borderRadius = "50%";
+          avatar.style.background = stringToColor(c.name);
+          avatar.style.color = "#fff";
+          avatar.style.display = "flex";
+          avatar.style.alignItems = "center";
+          avatar.style.justifyContent = "center";
+          avatar.style.fontWeight = "600";
+          avatar.style.fontSize = "1.1rem";
+          avatar.style.userSelect = "none";
+          row.appendChild(avatar);
 
+          // Main content
+          const main = document.createElement('div');
+          main.style.flex = "1";
+          main.style.minWidth = "0";
 
-  
+          // Name and time
+          const nameRow = document.createElement('div');
+          nameRow.style.display = "flex";
+          nameRow.style.alignItems = "center";
+          nameRow.style.gap = "10px";
+          nameRow.innerHTML = `<span style="font-weight:600;">${c.name}</span><span style="color:#888;font-size:0.95em;">${timeAgo(c.ts||Date.now())}</span>`;
+          main.appendChild(nameRow);
+
+          // Comment text
+          const textDiv = document.createElement('div');
+          textDiv.textContent = c.text;
+          textDiv.style.margin = "4px 0 6px 0";
+          textDiv.style.whiteSpace = "pre-wrap";
+          main.appendChild(textDiv);
+
+          // Actions row
+          const actions = document.createElement('div');
+          actions.style.display = "flex";
+          actions.style.alignItems = "center";
+          actions.style.gap = "8px";
+
+          // Like button
+          const likeBtn = document.createElement('button');
+          const liked = c.likedBy && c.likedBy.includes(myUserId);
+          likeBtn.innerHTML = `👍 <span>${c.likes||0}</span>`;
+          likeBtn.style.background = "none";
+          likeBtn.style.border = "none";
+          likeBtn.style.cursor = "pointer";
+          likeBtn.style.color = liked ? "#2196f3" : "inherit";
+          likeBtn.style.fontWeight = "600";
+          likeBtn.style.fontSize = "1.05em";
+          likeBtn.title = "Like";
+          likeBtn.onclick = function() {
+            let newLikedBy = Array.isArray(c.likedBy) ? [...c.likedBy] : [];
+            let newLikes = c.likes || 0;
+            if (!liked) {
+              newLikedBy.push(myUserId);
+              newLikes++;
+            } else {
+              newLikedBy = newLikedBy.filter(uid => uid !== myUserId);
+              newLikes = Math.max(0, newLikes - 1);
+            }
+            db.collection("comments").doc(doc.id).update({
+              likedBy: newLikedBy,
+              likes: newLikes
+            });
+          };
+          actions.appendChild(likeBtn);
+
+          // Delete button (only for own comment)
+          if (c.userId === myUserId) {
+            const deleteBtn = document.createElement('button');
+            deleteBtn.innerHTML = '🗑️';
+            deleteBtn.title = "Delete";
+            deleteBtn.style.background = "none";
+            deleteBtn.style.border = "none";
+            deleteBtn.style.cursor = "pointer";
+            deleteBtn.style.color = "#e53935";
+            deleteBtn.style.fontSize = "1.1em";
+            deleteBtn.onclick = function() {
+              if (confirm("Delete this comment?")) {
+                db.collection("comments").doc(doc.id).delete();
+              }
+            };
+            actions.appendChild(deleteBtn);
+          }
+
+          main.appendChild(actions);
+          row.appendChild(main);
+          list.appendChild(row);
+        });
+      });
+    }
+
+    // Add new comment
+    function postComment() {
+      let username = localStorage.getItem('username');
+      if (!username) {
+        showNamePopup();
+        return;
+      }
+      const input = document.getElementById('comment-input');
+      const text = input.value.trim();
+      if (text) {
+        db.collection("comments").add({
+          name: username,
+          text: text,
+          userId: getUserId(),
+          likes: 0,
+          likedBy: [],
+          ts: Date.now()
+        }).then(() => {
+          input.value = '';
+        });
+      }
+    }
+
+    document.getElementById('add-comment').onclick = postComment;
+    document.getElementById('comment-input').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        postComment();
+      }
+    });
+
+    // On page load, show popup if needed and load comments
+    document.addEventListener('DOMContentLoaded', function() {
+      if (!localStorage.getItem('username')) showNamePopup();
+      updateMyAvatar();
+      loadComments();
+    });
+  </script>
 </body>
-
-
-
-<!--body content-->
 </html>
-
