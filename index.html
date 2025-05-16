@@ -1,10 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--head content-->
+
 <head>
+  <!-- Night mode styles -->
+  <style>
+  body.night-mode {
+    background-color: #070505cb;
+    color: #f5f5f5;
+  }
+
+  body.night-mode .header {
+    background-color: #2e2d2d;
+    color: #f5f5f5;
+  }
+
+  body.night-mode .content {
+    background-color: #2b2626;
+    color: #fdfdfd;
+  }
+
+  body.night-mode .footer {
+    background-color: #2e2d2d;
+    color: #f5f5f5;
+  }
+
+  body.night-mode button {
+    background-color: #fa1b1b;
+    color: #f5f5f5;
+  }
+
+  body.night-mode button:hover {
+    background-color: #afacac;
+  }
+</style>
+<!-- Night mode styles -->
+  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CBSE Results 2025</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!--style-->
   <style>
     * {
       box-sizing: border-box;
@@ -15,11 +52,11 @@
     body {
       font-family: 'Inter', sans-serif;
       background-color: #f5f7fa;
-      color: #333;
+      color: #000000;
     }
 
     .header {
-      background-color: #1fd3e0;
+      background-color: #18b2bd;
       color: white;
       padding: 20px 30px;
       display: flex;
@@ -27,7 +64,9 @@
       align-items: center;
       flex-wrap: wrap;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      
     }
+    
 
     .header img {
       height: 60px;
@@ -62,7 +101,7 @@
     }
 
     .content h2 {
-      color: #007b83;
+      color: #09aeba;
       margin-bottom: 20px;
       font-size: 1.4rem;
     }
@@ -102,7 +141,7 @@
     }
 
     button:hover {
-      background-color: #df5e1d;
+      background-color: #e40000;
     }
 
     button[type="reset"] {
@@ -120,7 +159,7 @@
       border-radius: 10px;
       margin-top: 20px;
       display: none;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.823);
     }
 
     
@@ -153,27 +192,54 @@
     }
   </style>
 </head>
+<!--style-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7xj1z5l5e5e5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7xj1z5l5e5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous">
+
+
+
+<!--head content-->
+
+
+<!--body content-->
+
 <body>
   <div class="header">
-    <div class="title">
-      <img src="logo.png" alt="CBSE Logo">
-      <h1>Tharki Board of Senior Secondary Education</h1>
-    </div>
-    <h3>http://cbseresults.nic.in</h3>
+  <div class="title">
+    <img src="logo.png" alt="CBSE Logo">
+    <h1>Tharki Board of Senior Secondary Education</h1>
   </div>
+  <h3><b>Click to switch </b></h3>
+  <button id="themeToggle" style="padding: 10px; border: none; border-radius: 5px; cursor: pointer; background-color: #3b3d3c; color: white;"> Night Mode</button>
+</div>
 
   <div class="content">
     <h2>Senior School Certificate Examination (Class XII PCM) Results 2025</h2>
-    <p>Enter your Friend's name to check his result</p>
-    <input type="text" id="studentName" placeholder="Enter Name" autocomplete="off">
+    <p><b>Enter your Friend's name to check his result</b></p>
+    <input type="text" id="studentName" placeholder="Enter Name" autocomplete="on" oninput="showSuggestions(this.value)">
+<div id="suggestions" style="position: relative; max-width: 400px; margin: 0 auto; text-align: left;"></div>
     <br />
-    <button onclick="showResult()">Submit</button>
-    <button type="reset" onclick="resetForm()">Reset</button>
+    <button onclick="showResult();">Submit</button>
+    <button type="reset" onclick="resetForm();">Reset</button>
+
+    <p id="errorMessage" class="error"></p>
+
+    <!--script to show result-->
+
+
+    <script>
+      document.getElementById("studentName").addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        showResult();
+      }
+      });
+    </script>
+    <!--script to show result-->
     
-      <p id="errorMessage" class="error"></p>
-<iframe id="resultFrame" title="Class Result PDF"></iframe>
+    <iframe id="resultFrame" title="Class Result PDF"></iframe>
     <div style="text-align: center; margin-top: 10px;">
-    <h3 style="color: #007e87;">🎮 Try My First Game!</h3>
+    <h3 style="color: #09aeba;"><b>🎮 Try My First Game!</b></h3>
     <p style="margin: 10px 0;">I recently launched my first game on itch.io. Check it out and let me know what you think!</p>
     <a href="https://1fng.itch.io/birdington" target="_blank" 
     style="background-color: #56f77f; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;"
@@ -194,6 +260,46 @@
     Designed, Developed and Hosted by Byte Bandits
   </div>
 
+  <!--sugestion box-->
+  <script>
+  const names = ["Nikhil", "Abhay", "Nishant", "Nitin", "Harsh Kumar",  "Anurag", "Gaurav", "Akash Poddar", "Sameer", "Ankit Kumar", "Prashant", "Aaditya", "Gorakhnath", "Ayush Kumar Maharaj", "Akash 2", "Pawan", "Somnath", "Aakash", "Ankit", "Aniket", "Hemant", "Prithviraj", "Prince sharma", "Punyam", "Himanshu", "Prince Samariya", "Jaid", "Gulshan", "Dayanand",   "Inzamam", "SehajPreet", "Rihan", "Santosh", "Raghav", "Harsh Verma", "Deep", "Ayush Kushwaha", "YashRaj", "Jai kishan", "Vikas", "Lucky", "Yash Shrivastav", "Varun", "Anand", "Anusabu","keShav Choudhary", "Aakash saini", "ritik", "Ayush Mishra", "Harshit", "Jatin", "Sajal", "Rishabh", "Ranjan", "Anish", "Shivam", "Sumit"]; // Add more names as needed
+
+  function showSuggestions(input) {
+    const suggestionsDiv = document.getElementById("suggestions");
+    suggestionsDiv.innerHTML = ""; // Clear previous suggestions
+
+    if (input.trim() === "") {
+      return; // If input is empty, do nothing
+    }
+
+    const filteredNames = names.filter(name => name.toLowerCase().startsWith(input.toLowerCase()));
+
+    filteredNames.forEach(name => {
+      const suggestionItem = document.createElement("div");
+      suggestionItem.textContent = name;
+      suggestionItem.style.padding = "5px";
+      suggestionItem.style.cursor = "pointer";
+      suggestionItem.style.backgroundColor = "#75969B";
+      suggestionItem.style.borderRadius = "5px";
+      suggestionItem.style.margin = "2px 0";
+      suggestionItem.style.transition = "background 0.2s ease";
+      suggestionItem.addEventListener("mouseover", () => {
+        suggestionItem.style.backgroundColor = "#5a7b8c"; // Change color on hover
+      });
+      suggestionItem.style.borderBottom = "1px solid #ddd";
+
+      suggestionItem.addEventListener("click", () => {
+        document.getElementById("studentName").value = name; // Set the clicked name in the input field
+        suggestionsDiv.innerHTML = ""; // Clear suggestions
+      });
+
+      suggestionsDiv.appendChild(suggestionItem);
+    });
+  }
+</script>
+<!--suggestion box-->
+
+<!--script to show result-->
   <script>
     function showResult() {
       const name = document.getElementById("studentName").value.trim().toLowerCase();
@@ -230,5 +336,28 @@
       document.getElementById("resultFrame").style.display = "none";
     }
   </script>
+  <!--script to show result-->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const themeToggle = document.getElementById("themeToggle");
+    const body = document.body;
+
+    themeToggle.addEventListener("click", () => {
+      if (body.classList.contains("night-mode")) {
+        body.classList.remove("night-mode");
+        themeToggle.textContent = " Night Mode";
+        themeToggle.style.backgroundColor = "#3b3d3c";
+      } else {
+        body.classList.add("night-mode");
+        themeToggle.textContent = " Day Mode";
+        themeToggle.style.backgroundColor = "#fa1b1b";
+      }
+    });
+  });
+</script>
+  
 </body>
+
+
+<!--body content-->
 </html>
