@@ -193,7 +193,7 @@
   </style>
 </head>
 <!--style-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7xj1z5l5e5e5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7xj1z5l5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7xj1z5l5e5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous">
 
 
@@ -240,9 +240,7 @@
     <iframe id="resultFrame" title="Class Result PDF"></iframe>
     <div style="text-align: center; margin-top: 10px;">
     <h3 style="color: #09aeba;"><b>🎮 Try My First Game!</b></h3>
-      
     <p style="margin: 10px 0;">I recently launched my first game on itch.io. Check it out and let me know what you think!</p>
-      <br>
     <a href="https://1fng.itch.io/birdington" target="_blank" 
     style="background-color: #56f77f; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;"
     
@@ -252,6 +250,7 @@
       Play Now on itch.io
     </a>
     </div>
+    
     
   
     
@@ -264,7 +263,7 @@
 
   <!--sugestion box-->
   <script>
-  const names = ["Nikhil", "Abhay", "Nishant", "Nitin", "Harsh Kumar",  "Anurag", "Gaurav", "Akash Poddar", "Sameer", "Ankit Kumar", "Prashant", "Aaditya", "Gorakhnath", "Ayush Kumar Maharaj", "Akash 2", "Pawan", "Somnath", "Aakash", "Ankit", "Aniket", "Hemant", "Prithviraj", "Prince sharma", "Punyam", "Himanshu", "Prince Samariya", "Jaid", "Gulshan", "Dayanand",   "Inzamam", "SehajPreet", "Rihan", "Santosh", "Raghav", "Harsh Verma", "Deep", "Ayush Kushwaha", "YashRaj", "Jai kishan", "Vikas", "Lucky", "Yash Shrivastav", "Varun", "Anand", "Anu Sabu","Keshav Choudhary", "Aakash Saini", "Ritik", "Ayush Mishra", "Harshit", "Jatin", "Sajal", "Rishabh", "Ranjan", "Anish", "Shivam", "Sumit"]; // Add more names as needed
+  const names = ["Nikhil", "Abhay", "Nishant", "Nitin", "Harsh Kumar",  "Anurag", "Gaurav", "Akash Poddar", "Sameer", "Ankit Kumar", "Prashant", "Aaditya", "Gorakhnath", "Ayush Kumar Maharaj", "Akash 2", "Pawan", "Somnath", "Aakash", "Ankit", "Aniket", "Hemant", "Prithviraj", "Prince sharma", "Punyam", "Himanshu", "Prince Samariya", "Jaid", "Gulshan", "Dayanand",   "Inzamam", "SehajPreet", "Rihan", "Santosh", "Raghav", "Harsh Verma", "Deep", "Ayush Kushwaha", "YashRaj", "Jai kishan", "Vikas", "Lucky", "Yash Shrivastav", "Varun", "Anand", "Anusabu","Keshav Choudhary", "Aakash Saini", "Ritik", "Ayush Mishra", "Harshit", "Jatin", "Sajal", "Rishabh", "Ranjan", "Anish", "Shivam", "Sumit"]; // Add more names as needed
 
   function showSuggestions(input) {
     const suggestionsDiv = document.getElementById("suggestions");
@@ -357,9 +356,322 @@
     });
   });
 </script>
+
+<!-- YouTube-style Comment Box (Customizable Icons) -->
+<div id="name-popup-overlay" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.35); z-index:9999; align-items:center; justify-content:center;">
+  <div id="name-popup" style="background:#fff; color:#222; padding:32px 24px 24px 24px; border-radius:14px; box-shadow:0 8px 32px rgba(0,0,0,0.18); max-width:90vw; width:340px; text-align:center; position:relative;">
+    <h2 style="margin-bottom:18px; color:#09aeba;">Welcome!</h2>
+    <p style="margin-bottom:14px;">Please enter your name to comment:</p>
+    <input id="popup-username" type="text" style="width:90%; padding:10px; border-radius:7px; border:1px solid #ccc; font-size:1rem; margin-bottom:16px;" placeholder="Your name" maxlength="30" autofocus>
+    <br>
+    <button id="popup-save-btn" style="padding:8px 22px; border:none; border-radius:7px; background:#0398a2; color:#fff; font-size:1rem; cursor:pointer;">Continue</button>
+  </div>
+</div>
+
+<div id="comments-section" style="margin-top:40px; text-align:left; max-width:600px; margin-left:auto; margin-right:auto;">
+  <h3 style="color:#09aeba;">Comments</h3>
+  <div style="display:flex;align-items:flex-start;gap:10px;">
+    <div id="my-avatar" style="width:40px;height:40px;border-radius:50%;background:#0398a2;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:600;user-select:none;"></div>
+    <div style="flex:1;">
+      <textarea id="comment-input" rows="2" style="width:100%; border-radius:18px; padding:12px 16px; border:1px solid #ccc; font-size:1rem; resize:none;" placeholder="Add a public comment..."></textarea>
+      <div style="text-align:right;margin-top:6px;">
+        <button id="add-comment" style="background:#0398a2;color:white;padding:7px 18px;border-radius:18px;font-size:1rem;">Comment</button>
+      </div>
+    </div>
+  </div>
+  <div id="comments-list" style="margin-top:30px;"></div>
+</div>
+
+<style>
+/* Example: You can replace these with your own SVG, PNG, or font icons */
+.like-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  background: url('like.svg') center/contain no-repeat;
+  /* Replace 'like.svg' with your own icon or use background-color etc. */
+}
+.delete-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  background: url('trash.svg') center/contain no-repeat;
+  /* Replace 'trash.svg' with your own icon or use background-color etc. */
+}
+</style>
+
+<script>
+// Unique user id for this browser
+function getUserId() {
+  let uid = localStorage.getItem('user_id');
+  if (!uid) {
+    uid = 'u' + Math.random().toString(36).slice(2) + Date.now();
+    localStorage.setItem('user_id', uid);
+  }
+  return uid;
+}
+
+// Show popup if username not set
+function showNamePopup() {
+  document.getElementById('name-popup-overlay').style.display = 'flex';
+  document.getElementById('popup-username').focus();
+  updatePopupTheme();
+}
+
+// Save username and close popup
+function saveUsername() {
+  const input = document.getElementById('popup-username');
+  let username = input.value.trim();
+  if (username.length < 2) {
+    input.style.borderColor = 'red';
+    input.focus();
+    return;
+  }
+  localStorage.setItem('username', username);
+  document.getElementById('name-popup-overlay').style.display = 'none';
+  updateMyAvatar();
+  loadComments();
+}
+
+// Update avatar circle with first letter of name
+function updateMyAvatar() {
+  const username = localStorage.getItem('username') || '';
+  const avatar = document.getElementById('my-avatar');
+  if (username) {
+    avatar.textContent = username[0].toUpperCase();
+    avatar.style.background = stringToColor(username);
+  } else {
+    avatar.textContent = '';
+    avatar.style.background = '#0398a2';
+  }
+}
+
+// Generate a color from a string (for avatar bg)
+function stringToColor(str) {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash = str.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  let color = '#';
+  for (let i = 0; i < 3; i++) {
+    let value = (hash >> (i * 8)) & 0xFF;
+    color += ('00' + value.toString(16)).substr(-2);
+  }
+  return color;
+}
+
+// Format time ago
+function timeAgo(ts) {
+  const now = Date.now();
+  const diff = Math.floor((now - ts) / 1000);
+  if (diff < 5) return "just now";
+  if (diff < 60) return diff + " sec ago";
+  if (diff < 3600) return Math.floor(diff/60) + " min ago";
+  if (diff < 86400) return Math.floor(diff/3600) + " hr ago";
+  return new Date(ts).toLocaleDateString();
+}
+
+// Update popup and comments style based on theme
+function updatePopupTheme() {
+  const popup = document.getElementById('name-popup');
+  const overlay = document.getElementById('name-popup-overlay');
+  const isNight = document.body.classList.contains('night-mode');
+  if (isNight) {
+    popup.style.background = '#232323';
+    popup.style.color = '#f5f5f5';
+    overlay.style.background = 'rgba(0,0,0,0.65)';
+    document.getElementById('popup-save-btn').style.background = '#fa1b1b';
+  } else {
+    popup.style.background = '#fff';
+    popup.style.color = '#222';
+    overlay.style.background = 'rgba(0,0,0,0.35)';
+    document.getElementById('popup-save-btn').style.background = '#0398a2';
+  }
+  updateCommentsTheme();
+}
+
+// Listen for theme changes
+document.getElementById('themeToggle').addEventListener('click', updatePopupTheme);
+
+// Popup button events
+document.getElementById('popup-save-btn').onclick = saveUsername;
+document.getElementById('popup-username').addEventListener('keypress', function(e){
+  if(e.key === 'Enter') saveUsername();
+});
+
+// Load comments from localStorage
+function loadComments() {
+  const comments = JSON.parse(localStorage.getItem('comments') || '[]');
+  const list = document.getElementById('comments-list');
+  list.innerHTML = '';
+  const myUserId = getUserId();
+  comments.slice().reverse().forEach((c, idx) => {
+    const row = document.createElement('div');
+    row.className = "yt-comment-row";
+    row.style.display = "flex";
+    row.style.alignItems = "flex-start";
+    row.style.gap = "12px";
+    row.style.marginBottom = "22px";
+
+    // Avatar
+    const avatar = document.createElement('div');
+    avatar.textContent = c.name[0].toUpperCase();
+    avatar.style.width = avatar.style.height = "38px";
+    avatar.style.borderRadius = "50%";
+    avatar.style.background = stringToColor(c.name);
+    avatar.style.color = "#fff";
+    avatar.style.display = "flex";
+    avatar.style.alignItems = "center";
+    avatar.style.justifyContent = "center";
+    avatar.style.fontWeight = "600";
+    avatar.style.fontSize = "1.1rem";
+    avatar.style.userSelect = "none";
+    row.appendChild(avatar);
+
+    // Main content
+    const main = document.createElement('div');
+    main.style.flex = "1";
+    main.style.minWidth = "0";
+
+    // Name and time
+    const nameRow = document.createElement('div');
+    nameRow.style.display = "flex";
+    nameRow.style.alignItems = "center";
+    nameRow.style.gap = "10px";
+    nameRow.innerHTML = `<span style="font-weight:600;">${c.name}</span><span style="color:#888;font-size:0.95em;">${timeAgo(c.ts||Date.now())}</span>`;
+    main.appendChild(nameRow);
+
+    // Comment text
+    const textDiv = document.createElement('div');
+    textDiv.textContent = c.text;
+    textDiv.style.margin = "4px 0 6px 0";
+    textDiv.style.whiteSpace = "pre-wrap";
+    main.appendChild(textDiv);
+
+    // Actions row
+    const actions = document.createElement('div');
+    actions.style.display = "flex";
+    actions.style.alignItems = "center";
+    actions.style.gap = "8px";
+
+    // Like button
+    const likeBtn = document.createElement('button');
+    const liked = c.likedBy && c.likedBy.includes(myUserId);
+    likeBtn.innerHTML = `👍 <span>${c.likes||0}</span>`;
+    likeBtn.style.background = "none";
+    likeBtn.style.border = "none";
+    likeBtn.style.cursor = "pointer";
+    likeBtn.style.color = liked ? "#2196f3" : "inherit";
+    likeBtn.style.fontWeight = "600";
+    likeBtn.style.fontSize = "1.05em";
+    likeBtn.title = "Like";
+    likeBtn.onclick = function() {
+      if (!c.likedBy) c.likedBy = [];
+      if (!c.likedBy.includes(myUserId)) {
+        c.likes = (c.likes||0) + 1;
+        c.likedBy.push(myUserId);
+        saveAllComments(comments);
+      } else {
+        // Unlike
+        c.likes = Math.max(0, (c.likes||1) - 1);
+        c.likedBy = c.likedBy.filter(uid => uid !== myUserId);
+        saveAllComments(comments);
+      }
+    };
+    actions.appendChild(likeBtn);
+
+    // Delete button (only for own comment)
+    if (c.userId === myUserId) {
+      const deleteBtn = document.createElement('button');
+      deleteBtn.innerHTML = '🗑️';
+      
+      deleteBtn.title = "Delete";
+      deleteBtn.style.background = "none";
+      deleteBtn.style.border = "none";
+      deleteBtn.style.cursor = "pointer";
+      deleteBtn.style.color = "#e53935";
+      deleteBtn.style.fontSize = "1.1em";
+      deleteBtn.onclick = function() {
+        if (confirm("Delete this comment?")) {
+          comments.splice(comments.length-1-idx, 1); // reverse order
+          saveAllComments(comments);
+        }
+      };
+      actions.appendChild(deleteBtn);
+    }
+
+    main.appendChild(actions);
+    row.appendChild(main);
+
+    // Theme
+    const isNight = document.body.classList.contains('night-mode');
+    row.style.background = isNight ? "#232323" : "#f5f7fa";
+    row.style.color = isNight ? "#f5f5f5" : "#222";
+    row.style.borderRadius = "12px";
+    row.style.padding = "10px 16px";
+    row.style.border = isNight ? "1px solid #444" : "1px solid #e0e0e0";
+
+    list.appendChild(row);
+  });
+}
+
+// Save all comments and reload
+function saveAllComments(comments) {
+  localStorage.setItem('comments', JSON.stringify(comments));
+  loadComments();
+}
+
+// Add new comment
+function postComment() {
+  let username = localStorage.getItem('username');
+  if (!username) {
+    showNamePopup();
+    return;
+  }
+  const input = document.getElementById('comment-input');
+  const text = input.value.trim();
+  if (text) {
+    const comments = JSON.parse(localStorage.getItem('comments') || '[]');
+    comments.push({ 
+      name: username, 
+      text, 
+      userId: getUserId(), 
+      likes: 0, 
+      likedBy: [],
+      ts: Date.now()
+    });
+    localStorage.setItem('comments', JSON.stringify(comments));
+    input.value = '';
+    loadComments();
+  }
+}
+
+document.getElementById('add-comment').onclick = postComment;
+
+// Post comment on Enter (without Shift)
+document.getElementById('comment-input').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    postComment();
+  }
+});
+
+// On page load, show popup if needed and load comments
+document.addEventListener('DOMContentLoaded', function() {
+  if (!localStorage.getItem('username')) showNamePopup();
+  updateMyAvatar();
+  loadComments();
+});
+</script>
+
+
   
 </body>
 
 
+
 <!--body content-->
 </html>
+
