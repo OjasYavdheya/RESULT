@@ -69,6 +69,126 @@
   </style>
 </head>
 <body>
+  <body>
+  <!-- Study Loader: Front View, Big Size -->
+  <div id="loading-overlay" style="position:fixed;z-index:99999;top:0;left:0;width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;background:#fff;transition:opacity 0.5s;">
+    <div class="study-loader">
+      <div class="study-svg">
+        <!-- Front view boy at desk SVG -->
+        <svg width="260" height="260" viewBox="0 0 260 260" fill="none">
+          <!-- Table -->
+          <rect x="40" y="180" width="180" height="28" rx="8" fill="#18b2bd"/>
+          <!-- Book -->
+          <rect x="110" y="155" width="40" height="18" rx="4" fill="#fff"/>
+          <rect x="110" y="165" width="40" height="3" fill="#ff8a8a"/>
+          <!-- Chair -->
+          <rect x="60" y="200" width="30" height="40" rx="8" fill="#bdbdbd"/>
+          <!-- Boy Body -->
+          <ellipse cx="130" cy="140" rx="28" ry="38" fill="#0398a2"/>
+          <!-- Head -->
+          <ellipse cx="130" cy="90" rx="26" ry="26" fill="#ffdbb6"/>
+          <!-- Hair -->
+          <ellipse cx="130" cy="80" rx="22" ry="10" fill="#3b3d3c"/>
+          <!-- Arm Left -->
+          <rect x="85" y="140" width="14" height="48" rx="7" fill="#ffdbb6" transform="rotate(-18 85 140)">
+            <animateTransform attributeName="transform" type="rotate" values="-18 85 140; -8 85 140; -18 85 140" dur="1.2s" repeatCount="indefinite"/>
+          </rect>
+          <!-- Arm Right -->
+          <rect x="161" y="140" width="14" height="48" rx="7" fill="#ffdbb6" transform="rotate(18 161 140)">
+            <animateTransform attributeName="transform" type="rotate" values="18 161 140; 28 161 140; 18 161 140" dur="1.2s" repeatCount="indefinite"/>
+          </rect>
+          <!-- Eyes -->
+          <ellipse cx="122" cy="95" rx="3.5" ry="5" fill="#222"/>
+          <ellipse cx="138" cy="95" rx="3.5" ry="5" fill="#222"/>
+          <!-- Smile -->
+          <path d="M124 108 Q130 115 136 108" stroke="#e57373" stroke-width="2.5" fill="none"/>
+          <!-- Desk lamp -->
+          <rect x="200" y="110" width="10" height="50" rx="5" fill="#bdbdbd"/>
+          <ellipse cx="205" cy="110" rx="16" ry="8" fill="#ffe082"/>
+          <ellipse cx="205" cy="110" rx="10" ry="4" fill="#fffde7"/>
+          <!-- Notebook lines -->
+          <rect x="115" y="160" width="30" height="2" fill="#bdbdbd"/>
+          <rect x="115" y="164" width="30" height="2" fill="#bdbdbd"/>
+        </svg>
+      </div>
+      <div class="study-dots">
+        <span>.</span><span>.</span><span>.</span>
+      </div>
+      <div class="study-loading-text">Loading...</div>
+    </div>
+  </div>
+  <style>
+    .study-loader {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+    }
+    .study-svg {
+      margin-bottom: 10px;
+      animation: table-shake 1.2s infinite;
+    }
+    @keyframes table-shake {
+      0% { transform: translateY(0);}
+      20% { transform: translateY(-4px);}
+      40% { transform: translateY(2px);}
+      60% { transform: translateY(-2px);}
+      80% { transform: translateY(1px);}
+      100% { transform: translateY(0);}
+    }
+    .study-dots {
+      font-size: 2.6rem;
+      color: #18b2bd;
+      letter-spacing: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 38px;
+      margin-bottom: 2px;
+    }
+    .study-dots span {
+      opacity: 0.2;
+      animation: study-dot-blink 1.2s infinite;
+      margin: 0 3px;
+    }
+    .study-dots span:nth-child(2) { animation-delay: 0.3s;}
+    .study-dots span:nth-child(3) { animation-delay: 0.6s;}
+    @keyframes study-dot-blink {
+      0%,100% { opacity: 0.2;}
+      50% { opacity: 1;}
+    }
+    .study-loading-text {
+      font-size: 1.5rem;
+      color: #18b2bd;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-top: 2px;
+      font-family: 'Inter', sans-serif;
+      text-shadow: 0 2px 8px #fff8;
+    }
+    @media (max-width: 700px) {
+      .study-loader svg { width: 160px; height: 160px;}
+      .study-dots { font-size: 1.3rem;}
+      .study-loading-text { font-size: 1rem;}
+    }
+  </style>
+  <script>
+    // Loader logic: minimum 2s, but waits for page load
+    window.addEventListener('load', function() {
+      const overlay = document.getElementById('loading-overlay');
+      const minTime = 2000;
+      const start = performance.timing.navigationStart || Date.now();
+      const now = Date.now();
+      const elapsed = now - start;
+      const wait = Math.max(0, minTime - elapsed);
+      setTimeout(() => {
+        overlay.style.opacity = '0';
+        setTimeout(() => overlay.style.display = 'none', 500);
+      }, wait);
+    });
+  </script>
+<!-- ...rest of your body code... -->
   <div class="header">
     <div class="title">
       <img src="logo.png" alt="CBSE Logo">
@@ -112,6 +232,7 @@
       <input id="popup-username" type="text" style="width:90%; padding:10px; border-radius:7px; border:1px solid #ccc; font-size:1rem; margin-bottom:16px;" placeholder="Your name" maxlength="30" autofocus>
       <br>
       <button id="popup-save-btn" style="padding:8px 22px; border:none; border-radius:7px; background:#0398a2; color:#fff; font-size:1rem; cursor:pointer;">Continue</button>
+      <button id="popup-cancel-btn" style="padding:8px 22px; border:none; border-radius:7px; background:#aaa; color:#222; font-size:1rem; cursor:pointer; margin-left:10px;">Cancel</button>
     </div>
   </div>
 
@@ -320,6 +441,9 @@
     document.getElementById('popup-username').addEventListener('keypress', function(e){
       if(e.key === 'Enter') saveUsername();
     });
+    document.getElementById('popup-cancel-btn').onclick = function() {
+      document.getElementById('name-popup-overlay').style.display = 'none';
+    };
 
     // Load comments from Firestore (real-time)
     function loadComments() {
@@ -469,7 +593,7 @@
 
     // On page load, show popup if needed and load comments
     document.addEventListener('DOMContentLoaded', function() {
-      if (!localStorage.getItem('username')) showNamePopup();
+    
       updateMyAvatar();
       loadComments();
     });
