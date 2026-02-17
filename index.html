@@ -165,7 +165,7 @@
         errorMessage.textContent = "Please enter your name.";
         return;
       }
-      const filePath = name + ".pdf";
+      const filePath = `pdfs/${name}.pdf`;
       fetch(filePath, { method: "HEAD" })
         .then(response => {
           if (response.ok) {
