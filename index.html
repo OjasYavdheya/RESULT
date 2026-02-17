@@ -5,73 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CBSE Results 2025</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f5f7fa;
-      color: #000;
-    }
-    .header {
-      background-color: #18b2bd;
-      color: white;
-      padding: 20px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .header img { height: 60px; margin-right: 15px; }
-    .header .title { display: flex; align-items: center; flex: 1; min-width: 300px; }
-    .header h1 { font-size: 1.5rem; font-weight: 600; }
-    .content {
-      max-width: 700px;
-      margin: 60px auto 100px auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.05);
-      text-align: center;
-    }
-    .content h2 { color: #09aeba; margin-bottom: 20px; font-size: 1.4rem; }
-    input[type="text"] {
-      padding: 10px; width: 70%; max-width: 400px; border: 1px solid #ccc;
-      border-radius: 8px; margin-top: 10px; font-size: 1rem; outline: none; transition: border 0.2s;
-    }
-    input[type="text"]:focus { border-color: #007b83; }
-    .error { color: red; margin-top: 10px; font-size: 0.95rem; }
-    button {
-      padding: 10px 20px; margin: 15px 8px 20px; font-size: 1rem; border: none;
-      border-radius: 8px; cursor: pointer; background: #0398a2; color: white; transition: background 0.2s;
-    }
-    button:hover { background: #e40000; }
-    button[type="reset"] { background: #aaa; }
-    button[type="reset"]:hover { background: #888; }
-    iframe {
-      width: 100%; height: 500px; border: none; border-radius: 10px; margin-top: 20px;
-      display: none; box-shadow: 0 6px 20px rgba(0,0,0,0.82);
-    }
-    .footer {
-      background: #e1f3f3; color: #333; padding: 12px; text-align: center; font-size: 0.9rem;
-      position: fixed; bottom: 0; width: 100%; box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
-    }
-    @media (max-width: 600px) {
-      .header { flex-direction: column; text-align: center; }
-      .header .title { justify-content: center; margin-bottom: 10px; }
-      input[type="text"] { width: 90%; }
-    }
-    body.night-mode { background: #070505cb; color: #f5f5f5; }
-    body.night-mode .header { background: #2e2d2d; color: #f5f5f5; }
-    body.night-mode .content { background: #2b2626; color: #fdfdfd; }
-    body.night-mode .footer { background: #2e2d2d; color: #f5f5f5; }
-    body.night-mode button { background: #fa1b1b; color: #f5f5f5; }
-    body.night-mode button:hover { background: #afacac; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <body>
-
-<!-- ...rest of your body code... -->
   <div class="header">
     <div class="title">
       <img src="logo.png" alt="CBSE Logo">
@@ -106,86 +42,6 @@
   <div class="footer">
     Designed, Developed and Hosted by Byte Bandits
   </div>
-
-  
-  <script>
-    // Night mode toggle
-    document.addEventListener("DOMContentLoaded", () => {
-      const themeToggle = document.getElementById("themeToggle");
-      const body = document.body;
-      themeToggle.addEventListener("click", () => {
-        if (body.classList.contains("night-mode")) {
-          body.classList.remove("night-mode");
-          themeToggle.textContent = " Night Mode";
-          themeToggle.style.backgroundColor = "#3b3d3c";
-        } else {
-          body.classList.add("night-mode");
-          themeToggle.textContent = " Day Mode";
-          themeToggle.style.backgroundColor = "#fa1b1b";
-        }
-      });
-    });
-
-    // Suggestion box
-    const names = ["Nikhil", "Abhay", "Nishant", "Nitin", "Harsh Kumar", "Anurag", "Gaurav", "Akash Poddar", "Sameer", "Ankit Kumar", "Prashant", "Aaditya", "Gorakhnath", "Ayush Kumar Maharaj", "Akash 2", "Pawan", "Somnath", "Akash", "Ankit", "Aniket", "Hemant", "Prithviraj", "Prince sharma", "Punyam", "Himanshu", "Prince Samariya", "Jaid", "Gulshan", "Dayanand", "Inzamam", "SehajPreet", "Rihan", "Santosh", "Raghav", "Harsh Verma", "Deep", "Ayush Kushwaha", "YashRaj", "Jai kishan", "Vikas", "Lucky", "Yash Shrivastav", "Varun", "Anand", "Anusabu","Keshav Choudhary", "Aakash Saini", "Ritik", "Ayush Mishra", "Harshit", "Jatin", "Sajal", "Rishabh", "Ranjan", "Anish", "Shivam", "Sumit"];
-    function showSuggestions(input) {
-      const suggestionsDiv = document.getElementById("suggestions");
-      suggestionsDiv.innerHTML = "";
-      if (input.trim() === "") return;
-      const filteredNames = names.filter(name => name.toLowerCase().startsWith(input.toLowerCase()));
-      filteredNames.forEach(name => {
-        const suggestionItem = document.createElement("div");
-        suggestionItem.textContent = name;
-        suggestionItem.style.padding = "5px";
-        suggestionItem.style.cursor = "pointer";
-        suggestionItem.style.backgroundColor = "#75969B";
-        suggestionItem.style.borderRadius = "5px";
-        suggestionItem.style.margin = "2px 0";
-        suggestionItem.style.transition = "background 0.2s";
-        suggestionItem.addEventListener("mouseover", () => {
-          suggestionItem.style.backgroundColor = "#5a7b8c";
-        });
-        suggestionItem.style.borderBottom = "1px solid #ddd";
-        suggestionItem.addEventListener("click", () => {
-          document.getElementById("studentName").value = name;
-          suggestionsDiv.innerHTML = "";
-        });
-        suggestionsDiv.appendChild(suggestionItem);
-      });
-    }
-
-    // Result show/reset
-    function showResult() {
-      const name = document.getElementById("studentName").value.trim().toLowerCase();
-      const errorMessage = document.getElementById("errorMessage");
-      const resultFrame = document.getElementById("resultFrame");
-      errorMessage.textContent = "";
-      resultFrame.style.display = "none";
-      if (name === "") {
-        errorMessage.textContent = "Please enter your name.";
-        return;
-      }
-      const filePath = `pdfs/${name}.pdf`;
-      fetch(filePath, { method: "HEAD" })
-        .then(response => {
-          if (response.ok) {
-            resultFrame.src = filePath;
-            resultFrame.style.display = "block";
-          } else {
-            errorMessage.textContent = `Result not found for "${name}". Please check the spelling.`;
-          }
-        })
-        .catch(() => {
-          errorMessage.textContent = "Error fetching the result. Try again later.";
-        });
-    }
-    function resetForm() {
-      document.getElementById("studentName").value = "";
-      document.getElementById("errorMessage").textContent = "";
-      document.getElementById("resultFrame").style.display = "none";
-    }
-
- 
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
