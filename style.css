@@ -32,6 +32,15 @@ body {
     font-weight: 600;
 }
 
+#themeToggle {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background: #3b3d3c;
+    color: white;
+    cursor: pointer;
+}
+
 .content {
     max-width: 700px;
     margin: 60px auto 100px auto;

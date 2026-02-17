@@ -8,23 +8,30 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <div class="header">
     <div class="title">
       <img src="logo.png" alt="CBSE Logo">
       <h1>Tharki Board of Senior Secondary Education</h1>
     </div>
-    <button id="themeToggle" style="padding:10px; border:none; border-radius:5px; cursor:pointer; background:#3b3d3c; color:white;"> Night Mode</button>
+
+    <button id="themeToggle">Night Mode</button>
   </div>
 
   <div class="content">
     <h2>Senior School Certificate Examination (Class XII PCM) Results 2025</h2>
+
     <p><b>Enter your Friend's name to check his result</b></p>
+
     <input type="text" id="studentName" placeholder="Enter Name" autocomplete="on" oninput="showSuggestions(this.value)">
     <div id="suggestions" style="position:relative; max-width:400px; margin:0 auto; text-align:left;"></div>
     <br />
+
     <button onclick="showResult();">Submit</button>
     <button type="reset" onclick="resetForm();">Reset</button>
+
     <p id="errorMessage" class="error"></p>
+
     <iframe id="resultFrame" title="Class Result PDF"></iframe>
     <div style="text-align:center; margin-top:10px;">
       <h3 style="color:#09aeba;"><b>🎮 Try My First Game!</b></h3>
@@ -36,6 +43,7 @@
         Play Now on itch.io
       </a>
     </div>
+
     <p style="margin-top:30px;">Brought to you by <strong>Nikhil Yadav & Harsh</strong></p>
   </div>
 
